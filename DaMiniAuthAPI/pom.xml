@@ -9,12 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.damini</groupId>
-	<artifactId>authapi</artifactId>
+	<artifactId>DaMiniAuthAPI</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>DaMiniAuthAPI</name>
-	<description>DaMini AuthAPI is a next-generation, cloud-ready authentication microservice designed to seamlessly integrate with modern distributed architectures. Built with Spring Boot and powered by Java 17, it delivers robust, scalable, and enterprise-grade identity management capabilities out of the box.
-
-Featuring RESTful endpoints, secure token handling, and a developer-friendly API, DaMini AuthAPI empowers organizations to accelerate their digital transformation journey with confidence and agility.</description>
+	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -29,7 +27,7 @@ Featuring RESTful endpoints, secure token handling, and a developer-friendly API
 		<url/>
 	</scm>
 	<properties>
-		<java.version>17</java.version>
+		<java.version>21</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -61,6 +59,11 @@ Featuring RESTful endpoints, secure token handling, and a developer-friendly API
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
@@ -75,8 +78,28 @@ Featuring RESTful endpoints, secure token handling, and a developer-friendly API
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<annotationProcessorPaths>
+						<path>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</path>
+					</annotationProcessorPaths>
+				</configuration>
+			</plugin>
+			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</exclude>
+					</excludes>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
