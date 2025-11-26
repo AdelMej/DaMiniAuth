@@ -1,10 +1,10 @@
-package com.example.demo;
+package com.DaMiniAuth.springAuth;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DaMiniAuthApiApplicationTests {
+class DaMiniAuthApplicationTests {
 
 	@Test
 	void contextLoads() {
